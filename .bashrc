@@ -289,8 +289,8 @@ export DISPLAY=localhost:0.0
 #GIT_PROMPT_ONLY_IN_REPO=1
 #source ~/.bash-git-prompt/gitprompt.sh
 
-PS1_START='\[\033[01;32m\]\u\[\033[01;33m\]@\[\033[01;35m\]\h\[\033[01;32m\]:\[\033[01;36m\]\w'
-PS1_END='\n\[\033[01;36m\]\$\[\033[00m\]'
+PS1_START='\[\033[01;30m\]\u\[\033[01;30m\]@\[\033[01;30m\]\h\[\033[01;30m\]:\[\033[01;30m\]\w'
+PS1_END='\n\[\033[01;32m\]\$\[\033[00m\]'
 export PS1=${PS1_START}${PS1_END}
 
 prompt() {
