@@ -34,6 +34,7 @@ Plugin 'itchyny/lightline.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'tomtom/tcomment_vim'
 Plugin 'ngmy/vim-rubocop'
+Plugin 'lervag/vimtex'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -60,6 +61,9 @@ set backupdir=/tmp
 set directory=/tmp
 set tags=./tags;
 set viminfo+=%
+set textwidth=80
+set colorcolumn=80
+set number
 au BufNewFile,BufRead *.plc set filetype=c
 au BufNewFile,BufRead *.rd set filetype=c
 au BufNewFile,BufRead *.inc set filetype=c

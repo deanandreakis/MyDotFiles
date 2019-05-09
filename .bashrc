@@ -23,6 +23,10 @@
 
 # User dependent .bashrc file
 
+if [ -t 1 ]; then
+  cd ~
+fi
+
 # If not running interactively, don't do anything
 [[ "$-" != *i* ]] && return
 
@@ -107,7 +111,11 @@ export HISTIGNORE=$'[ \t]*:&:[fb]g:exit:ls' # Ignore the ls command as well
 # alias fgrep='fgrep --color=auto'              # show differences in colour
 #
 # Some shortcuts for different directory listings
-alias ls='ls -hF --color=tty'                 # classify files in colour
+export LS_OPTIONS='--color=auto'
+eval "$(dircolors -b)"
+alias ls='ls $LS_OPTIONS'
+LS_COLORS=$LS_COLORS:'ow=01;34:di=01;34;40:' ; export LS_COLORS
+#alias ls='ls -hF --color=tty'                 # classify files in colour
 # alias dir='ls --color=auto --format=vertical'
 # alias vdir='ls --color=auto --format=long'
 # alias ll='ls -l'                              # long list
@@ -195,8 +203,8 @@ alias ls='ls -hF --color=tty'                 # classify files in colour
 #   return 0
 # }
 # 
-alias docs='cd /c/Users/979603/Documents'
-alias dtop='cd /c/Users/979603/Desktop'
+alias docs='cd /mnt/c/Users/979603/Documents'
+alias dtop='cd /mnt/c/Users/979603/Desktop'
 PATH=".:"$PATH
 
 ###########TRAAP DOC BLD STUFF#############################
@@ -206,13 +214,21 @@ PATH=".:"$PATH
 #PATH= $PATH:"$miktex"
 export HOMEDRIVE=C:
 
+AUTODOCPATH=${HOME}/git/autodoc
+export AUTODOCPATH
+
+NEWDOCPATH=${HOME}/git/newdoc
+export NEWDOCPATH
+
 DOCBLDPATH=${HOME}/git/docbld
 export DOCBLDPATH
+
 function docbld() {
   rake --rakefile ${DOCBLDPATH}/Rakefile $1
 }
+
 function newdoc() {
-  ${DOCBLDPATH}/bin/newdoc $1 $2 $3
+  ${NEWDOCPATH}/newdoc "$@"
 }
 function newdata() {
   ${DOCBLDPATH}/bin/newdata
@@ -266,4 +282,35 @@ sshstart() {
   fi
 }
 
-export PATH="$PATH:/c/Windows/Microsoft.NET/Framework/v4.0.30319"
+export DISPLAY=localhost:0.0
+
+#export PATH="$PATH:/mnt/c/Windows/Microsoft.NET/Framework/v4.0.30319"
+
+#GIT_PROMPT_ONLY_IN_REPO=1
+#source ~/.bash-git-prompt/gitprompt.sh
+
+PS1_START='\[\033[01;32m\]\u\[\033[01;33m\]@\[\033[01;35m\]\h\[\033[01;32m\]:\[\033[01;36m\]\w'
+PS1_END='\n\[\033[01;36m\]\$\[\033[00m\]'
+export PS1=${PS1_START}${PS1_END}
+
+prompt() {
+  GIT_PROMPT_ONLY_IN_REPO=1
+  GIT_PROMPT_START=${PS1_START}
+  GIT_PROMPT_END=${PS1_END}
+}
+
+if [[ ${OSTYPE} =~ "darwin" ]]; then
+  if [[ -f $(brew --prefix)/opt/bash-git-prompt/share/gitprompt.sh ]]; then
+    prompt
+    source "$(brew --prefix)/opt/bash-git-prompt/share/gitprompt.sh"
+  fi
+elif [[ ${OSTYPE} =~ "linux" ]] ||
+     [[ ${OSTYPE} =~ "cygwin" ]] ||
+     [[ ${OSTYPE} =~ "msys" ]]; then
+  if [[ -f ${HOME}/.bash-git-prompt/gitprompt.sh ]]; then
+    prompt
+    source ${HOME}/.bash-git-prompt/gitprompt.sh
+  fi
+fi
+
+VISUAL=vim; export VISUAL EDITOR=vim; export EDITOR

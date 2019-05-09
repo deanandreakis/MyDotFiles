@@ -1,7 +1,8 @@
 [alias]
-        tree = log --oneline --decorate --all --graph
+  tree = log --oneline --decorate --all --graph
 [user]
-        name = Dean Andreakis
-        email = dean.andreakis@fresenius-kabi.com
+  name = Dean Andreakis
+  email = dean.andreakis@fresenius-kabi.com
 [core]
-        autocrlf = input
+  autocrlf = input
+  eol = lf
