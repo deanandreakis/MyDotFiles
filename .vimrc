@@ -62,6 +62,8 @@ set directory=/tmp
 set tags=./tags;
 set viminfo+=%
 set textwidth=80
+set fo=cqt
+set wm=0
 set colorcolumn=80
 set number
 au BufNewFile,BufRead *.plc set filetype=c
