@@ -35,7 +35,8 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'tomtom/tcomment_vim'
 Plugin 'ngmy/vim-rubocop'
 Plugin 'lervag/vimtex'
-
+Plugin 'rust-lang/rust.vim'
+Plugin 'christoomey/vim-tmux-navigator'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -187,7 +188,4 @@ map Y y$
 " next search
 nnoremap <C-L> :nohl<CR><C-L>
 map <C-o> :NERDTreeToggle<CR>
-map <C-c> "+y
-map <C-v> "*p
 "------------------------------------------------------------
-
