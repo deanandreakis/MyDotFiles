@@ -21,37 +21,18 @@ set nocompatible
 " filetype indent plugin on
 filetype off
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
-
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'sjl/badwolf'
-Plugin 'itchyny/lightline.vim'
-Plugin 'scrooloose/nerdtree'
-Plugin 'tomtom/tcomment_vim'
-Plugin 'ngmy/vim-rubocop'
-Plugin 'lervag/vimtex'
-Plugin 'rust-lang/rust.vim'
-Plugin 'christoomey/vim-tmux-navigator'
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
-" To ignore plugin indent changes, instead use:
-"filetype plugin on
-"
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-"
-" see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this line
-
+"https://github.com/junegunn/vim-plug
+call plug#begin()
+" essential plugins
+Plug 'sjl/badwolf'
+Plug 'itchyny/lightline.vim'
+Plug 'scrooloose/nerdtree'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'jiangmiao/auto-pairs'
+Plug 'tpope/vim-commentary'
+call plug#end()
 
 " Enable syntax highlighting
 syntax on
@@ -62,11 +43,6 @@ set backupdir=/tmp
 set directory=/tmp
 set tags=./tags;
 set viminfo+=%
-set textwidth=80
-set fo=cqt
-set wm=0
-set colorcolumn=80
-set number
 au BufNewFile,BufRead *.plc set filetype=c
 au BufNewFile,BufRead *.rd set filetype=c
 au BufNewFile,BufRead *.inc set filetype=c
@@ -74,6 +50,11 @@ au BufNewFile,BufRead *.inc set filetype=c
 " Must have options {{{1
 "
 " These are very highly recommended options.
+set textwidth=80
+set fo=cqt
+set wm=0
+set colorcolumn=80
+set number
 
 " One of the most important options to activate. Allows you to switch from an
 " unsaved buffer without saving it first. Also allows you to keep an undo
@@ -188,4 +169,7 @@ map Y y$
 " next search
 nnoremap <C-L> :nohl<CR><C-L>
 map <C-o> :NERDTreeToggle<CR>
+" map <C-c> "+y
+" map <C-v> "*p
 "------------------------------------------------------------
+
