@@ -21,40 +21,74 @@ set nocompatible
 " filetype indent plugin on
 filetype off
 
-"https://github.com/junegunn/vim-plug
 call plug#begin()
-" essential plugins
 Plug 'sjl/badwolf'
-Plug 'itchyny/lightline.vim'
 Plug 'scrooloose/nerdtree'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
-Plug 'christoomey/vim-tmux-navigator'
-Plug 'jiangmiao/auto-pairs'
+Plug 'itchyny/lightline.vim'
 Plug 'tpope/vim-commentary'
+Plug 'jiangmiao/auto-pairs'
+Plug 'tpope/vim-endwise'
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'tpope/vim-dispatch'
+" For Ruby and Rails
+Plug 'tpope/vim-rails'
+Plug 'tpope/vim-bundler'
+Plug 'dense-analysis/ale'
 call plug#end()
+
+" ALE settings for Linting
+let g:ale_linters = {
+      \   'ruby': ['standardrb', 'rubocop'],
+      \   'javascript': ['eslint'],
+      \}
+let g:ale_fixers = {
+      \    'ruby': ['standardrb'],
+      \}
+let g:ale_fix_on_save = 1
+
+function! LinterStatus() abort
+  let l:counts = ale#statusline#Count(bufnr(''))
+
+  let l:all_errors = l:counts.error + l:counts.style_error
+  let l:all_non_errors = l:counts.total - l:all_errors
+
+  return l:counts.total == 0 ? '✨ all good ✨' : printf(
+        \   '😞 %dW %dE',
+        \   all_non_errors,
+        \   all_errors
+        \)
+endfunction
+
+
+let g:lightline = {
+      \ 'colorscheme': 'powerline',
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'linterstatus', 'readonly', 'filename', 'modified' ] ]
+      \ },
+      \ 'component_function': {
+      \   'linterstatus': 'LinterStatus'
+      \ },
+      \ }
+
+autocmd FileType json syntax match Comment +\/\/.\+$+
 
 " Enable syntax highlighting
 syntax on
-
+set t_ut=
 set background=dark
 set backup
 set backupdir=/tmp
 set directory=/tmp
 set tags=./tags;
 set viminfo+=%
-au BufNewFile,BufRead *.plc set filetype=c
-au BufNewFile,BufRead *.rd set filetype=c
-au BufNewFile,BufRead *.inc set filetype=c
+set guifont=Monaco:h14
 "------------------------------------------------------------
 " Must have options {{{1
 "
 " These are very highly recommended options.
-set textwidth=80
-set fo=cqt
-set wm=0
-set colorcolumn=80
-set number
 
 " One of the most important options to activate. Allows you to switch from an
 " unsaved buffer without saving it first. Also allows you to keep an undo
@@ -169,7 +203,6 @@ map Y y$
 " next search
 nnoremap <C-L> :nohl<CR><C-L>
 map <C-o> :NERDTreeToggle<CR>
-" map <C-c> "+y
-" map <C-v> "*p
+map ; :Files<CR>
 "------------------------------------------------------------
 
