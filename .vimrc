@@ -21,6 +21,9 @@ set nocompatible
 " filetype indent plugin on
 filetype off
 
+" Use <C-x><C-o> to show autocomplete manually
+let g:ale_completion_enabled = 1
+
 call plug#begin()
 Plug 'sjl/badwolf'
 Plug 'scrooloose/nerdtree'
@@ -44,7 +47,8 @@ let g:ale_linters = {
       \   'javascript': ['eslint'],
       \}
 let g:ale_fixers = {
-      \    'ruby': ['standardrb'],
+      \    'ruby': ['standardrb', 'rubocop'],
+      \   'javascript': ['eslint'],
       \}
 let g:ale_fix_on_save = 1
 
