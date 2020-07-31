@@ -1,16 +1,3 @@
-" URL: http://vim.wikia.com/wiki/Example_vimrc
-" Authors: http://vim.wikia.com/wiki/Vim_on_Freenode
-" Description: A minimal, but feature rich, example .vimrc. If you are a
-"              newbie, basing your first .vimrc on this file is a good choice.
-"              If you're a more advanced user, building your own .vimrc based
-"              on this file is still a good idea.
-
-"------------------------------------------------------------
-" Features {{{1
-"
-" These options and commands enable some very useful features in Vim, that
-" no user should have to live without.
-
 " Set 'nocompatible' to ward off unexpected things that your distro might
 " have made, as well as sanely reset options when re-sourcing .vimrc
 set nocompatible
@@ -32,23 +19,18 @@ Plug 'junegunn/fzf.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'tpope/vim-commentary'
 Plug 'jiangmiao/auto-pairs'
-Plug 'tpope/vim-endwise'
 Plug 'christoomey/vim-tmux-navigator'
-Plug 'tpope/vim-dispatch'
-" For Ruby and Rails
-Plug 'tpope/vim-rails'
-Plug 'tpope/vim-bundler'
 Plug 'dense-analysis/ale'
+" For TypeScript
+Plug 'leafgarland/typescript-vim'
 call plug#end()
 
 " ALE settings for Linting
 let g:ale_linters = {
-      \   'ruby': ['standardrb', 'rubocop'],
-      \   'javascript': ['eslint'],
+      \   'javascript': ['eslint']
       \}
 let g:ale_fixers = {
-      \    'ruby': ['standardrb', 'rubocop'],
-      \   'javascript': ['eslint'],
+      \   'javascript': ['eslint']
       \}
 let g:ale_fix_on_save = 1
 
@@ -207,6 +189,8 @@ map Y y$
 " next search
 nnoremap <C-L> :nohl<CR><C-L>
 map <C-o> :NERDTreeToggle<CR>
-map ; :Files<CR>
+
+let mapleader = ";"
+let maplocalleader = ","
 "------------------------------------------------------------
 
