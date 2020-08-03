@@ -23,6 +23,7 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'dense-analysis/ale'
 " For TypeScript
 Plug 'leafgarland/typescript-vim'
+Plug 'ryanoasis/vim-devicons'
 call plug#end()
 
 " ALE settings for Linting
@@ -70,7 +71,6 @@ set backupdir=/tmp
 set directory=/tmp
 set tags=./tags;
 set viminfo+=%
-set guifont=Monaco:h14
 "------------------------------------------------------------
 " Must have options {{{1
 "
