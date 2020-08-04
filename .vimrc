@@ -21,8 +21,7 @@ Plug 'tpope/vim-commentary'
 Plug 'jiangmiao/auto-pairs'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'dense-analysis/ale'
-" For TypeScript
-Plug 'leafgarland/typescript-vim'
+" Fancy Icons for NERDTree
 Plug 'ryanoasis/vim-devicons'
 call plug#end()
 
@@ -61,6 +60,26 @@ let g:lightline = {
       \ }
 
 autocmd FileType json syntax match Comment +\/\/.\+$+
+
+" Settings for NERDTree
+let g:NERDTreeShowHidden = 1
+let g:NERDTreeMinimalUI = 1
+let g:NERDTreeIgnore = []
+let g:NERDTreeStatusline = ''
+" Automaticaly close nvim if NERDTree is only thing left open
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+" Settyings for FZF
+nnoremap <C-p> :FZF<CR>
+let g:fzf_action = {
+  \ 'ctrl-t': 'tab split',
+  \ 'ctrl-s': 'split',
+  \ 'ctrl-v': 'vsplit'
+  \}
+
+" Put anything NeoVim specific here
+if has('nvim')
+endif
 
 " Enable syntax highlighting
 syntax on
@@ -185,9 +204,6 @@ set expandtab
 " which is the default
 map Y y$
 
-" Map <C-L> (redraw screen) to also turn off search highlighting until the
-" next search
-nnoremap <C-L> :nohl<CR><C-L>
 map <C-o> :NERDTreeToggle<CR>
 
 let mapleader = ";"
