@@ -21,16 +21,17 @@ Plug 'tpope/vim-commentary'
 Plug 'jiangmiao/auto-pairs'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'dense-analysis/ale'
-" Fancy Icons for NERDTree
-Plug 'ryanoasis/vim-devicons'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
 
 " ALE settings for Linting
 let g:ale_linters = {
-      \   'javascript': ['eslint']
+      \   'javascript': ['eslint'],
+      \   'python': ['flake8']
       \}
 let g:ale_fixers = {
-      \   'javascript': ['eslint']
+      \   'javascript': ['eslint'],
+      \   'python': ['autopep8']
       \}
 let g:ale_fix_on_save = 1
 
