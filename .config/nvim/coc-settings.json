@@ -1,0 +1,5 @@
+{
+  "eslint.options": {"useEslintrc": false},
+
+  "python.linting.flake8Enabled": true
+}
