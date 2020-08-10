@@ -8,9 +8,6 @@ set nocompatible
 " filetype indent plugin on
 filetype off
 
-" Use <C-x><C-o> to show autocomplete manually
-let g:ale_completion_enabled = 1
-
 call plug#begin()
 Plug 'sjl/badwolf'
 Plug 'scrooloose/nerdtree'
@@ -20,28 +17,30 @@ Plug 'itchyny/lightline.vim'
 Plug 'tpope/vim-commentary'
 Plug 'jiangmiao/auto-pairs'
 Plug 'christoomey/vim-tmux-navigator'
-Plug 'dense-analysis/ale'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
 
-" ALE settings for Linting
-let g:ale_linters = {
-      \   'javascript': ['eslint'],
-      \   'python': ['flake8']
-      \}
-let g:ale_fixers = {
-      \   'javascript': ['eslint'],
-      \   'python': ['autopep8']
-      \}
-let g:ale_fix_on_save = 1
-
 function! LinterStatus() abort
-  let l:counts = ale#statusline#Count(bufnr(''))
+  let diagnostics = get(b:, 'coc_diagnostic_info', {})
+  
+  if empty(diagnostics) | return '✨ all good ✨' | endif
+  
+  let errors = []
+  let warnings = []
+  
+  if get(diagnostics, 'warning', 0)
+    call add(warnings, diagnostics['warning'])
+  endif  
+  
+  if get(diagnostics, 'error', 0)
+    call add(errors, diagnostics['error'])
+  endif
+  
+  let l:counts = len(errors) + len(warnings)
+  let l:all_errors = len(errors)
+  let l:all_non_errors = len(warnings)
 
-  let l:all_errors = l:counts.error + l:counts.style_error
-  let l:all_non_errors = l:counts.total - l:all_errors
-
-  return l:counts.total == 0 ? '✨ all good ✨' : printf(
+  return l:counts == 0 ? '✨ all good ✨' : printf(
         \   '😞 %dW %dE',
         \   all_non_errors,
         \   all_errors

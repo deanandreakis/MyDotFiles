@@ -1,38 +1,30 @@
-# To the extent possible under law, the author(s) have dedicated all 
-# copyright and related and neighboring rights to this software to the 
-# public domain worldwide. This software is distributed without any warranty. 
-# You should have received a copy of the CC0 Public Domain Dedication along 
-# with this software. 
-# If not, see <http://creativecommons.org/publicdomain/zero/1.0/>. 
+export CLICOLOR=1
+export LSCOLORS=GxFxCxDxBxegedabagaced
 
-# ~/.bash_profile: executed by bash(1) for login shells.
+# Fastlane
+export PATH="$HOME/.fastlane/bin:$PATH"
 
-# The copy in your home directory (~/.bash_profile) is yours, please
-# feel free to customise it to create a shell
-# environment to your liking.  If you feel a change
-# would be benifitial to all, please feel free to send
-# a patch to the msys2 mailing list.
+# ruby (installed by Homebrew)
+export PATH="/usr/local/opt/ruby/bin:$PATH"
+export LDFLAGS="-L/usr/local/opt/ruby/lib"
+export CPPFLAGS="-I/usr/local/opt/ruby/include"
+export PKG_CONFIG_PATH="/usr/local/opt/ruby/lib/pkgconfig"
 
-# User dependent .bash_profile file
-
-# source the users bashrc if it exists
-if [ -f "${HOME}/.bashrc" ] ; then
-  source "${HOME}/.bashrc"
+if [ -n "$BASH_VERSION" ]; then
+    # include .bashrc if it exists
+    if [ -f "$HOME/.bashrc" ]; then
+        . "$HOME/.bashrc"
+    fi
 fi
 
-Term='xterm-256color'
+# MacPorts Installer addition on 2020-03-14_at_11:04:37: adding an appropriate PATH variable for use with MacPorts.
+export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
+# Finished adapting your PATH environment variable for use with MacPorts.
 
-# Set PATH so it includes user's private bin if it exists
-# if [ -d "${HOME}/bin" ] ; then
-#   PATH="${HOME}/bin:${PATH}"
-# fi
+# For autopep8 and pycodestyle
+export PATH="$HOME/Library/Python/3.8/bin:$PATH"
 
-# Set MANPATH so it includes users' private man if it exists
-# if [ -d "${HOME}/man" ]; then
-#   MANPATH="${HOME}/man:${MANPATH}"
-# fi
+# Created by `userpath` on 2020-08-05 21:44:22 for use with python virtualenv
+export PATH="$PATH:/Users/deanandreakis/.local/bin"
 
-# Set INFOPATH so it includes users' private info if it exists
-# if [ -d "${HOME}/info" ]; then
-#   INFOPATH="${HOME}/info:${INFOPATH}"
-# fi
+export FZF_DEFAULT_COMMAND='rg --files --no-ignore-vcs --hidden'

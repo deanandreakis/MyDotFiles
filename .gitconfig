@@ -2,7 +2,7 @@
   tree = log --oneline --decorate --all --graph
 [user]
   name = Dean Andreakis
-  email = dean.andreakis@fresenius-kabi.com
+  email = dean@deanware.com
 [core]
   autocrlf = input
   eol = lf
