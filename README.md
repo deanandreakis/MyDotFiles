@@ -1,2 +1,8 @@
 # MyDotFiles
-Dot files for vim, bash, etc.
+Dot files for:
+* Neovim
+* Vim
+* Bash
+* Zsh
+* Tmux
+* Git
