@@ -1,0 +1,23 @@
+[92753] [0;32m✓[0m ngrok tunnel running at [0;4mhttps://3bcc9fd808bf.ngrok.io[0m
+[92753] [0;33m⭑[0m This tunnel will timeout in [0;31m6 hours 45 minutes[0m
+[92753] [0;33m⭑[0m To avoid tunnels that timeout, it is recommended to signup for a free ngrok
+account at [0;4mhttps://ngrok.com/signup[0m. After you signup, install your
+personalized authorization token using [0;36mshopify tunnel auth <token>[0m.
+[92753] [36m⠋[0m [0mwriting .env file...[K
+[92753] [1A[32m✓[0m[0m [0m.env saved to project root[K[1B[92753] [0;32m✓[0m Whitelist URLS updated in Partners Dashboard
+[92753] [0m
+[0;33m⭑[0m To install and start using your app, open this URL in your browser:
+[0;32mhttps://3bcc9fd808bf.ngrok.io/auth?shop=deanandreakis.myshopify.com[0m
+
+[92753] [?25l[36m[1G━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[1G[36m┏━━ [0;36mRunning server...[0m [36m[75G[0m[?25h
+[92753] [36m┃ [0m
+[36m┃ [0m> shopify-sample@1.0.0 dev /Users/deanandreakis/git/shopify-sample
+[36m┃ [0m> node server.js
+[36m┃ [0m
+[92753] [36m┃ [0minfo  - Loaded env from /Users/deanandreakis/git/shopify-sample/.env
+[92753] [36m┃ [0mWarning: Built-in CSS support is being disabled due to custom CSS configuration being detected.
+[36m┃ [0mSee here for more info: https://err.sh/next.js/built-in-css-disabled
+[36m┃ [0m
+[92753] [36m┃ [0mevent - compiled successfully
+[92753] [36m┃ [0m> Ready on http://localhost:8081
+[92753] [?25l[31m[1G━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[1G[31m┗━━[31m[65G (188.8s) [0m[?25h

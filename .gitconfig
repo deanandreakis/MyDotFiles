@@ -1,8 +1,5 @@
-[alias]
-  tree = log --oneline --decorate --all --graph
+# This is Git's per-user configuration file.
 [user]
-  name = Dean Andreakis
-  email = dean@deanware.com
-[core]
-  autocrlf = input
-  eol = lf
+# Please adapt and uncomment the following lines:
+	name = Dean Andreakis
+	email = dean@deanware.com
