@@ -106,6 +106,10 @@ export PATH="$PATH:/Users/deanandreakis/.local/bin"
 # FZF default command
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore-vcs --hidden'
 
+# GCP Cloud CLI
+source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"
+source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"
+
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment

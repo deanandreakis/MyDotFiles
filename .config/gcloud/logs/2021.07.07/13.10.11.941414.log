@@ -1,0 +1,8 @@
+2021-07-07 13:10:11,949 DEBUG    root            Loaded Command Group: ['gcloud', 'config']
+2021-07-07 13:10:12,011 DEBUG    root            Loaded Command Group: ['gcloud', 'config', 'set']
+2021-07-07 13:10:12,013 DEBUG    root            Running [gcloud.config.set] with arguments: [SECTION/PROPERTY: "project", VALUE: "shopify-319117"]
+2021-07-07 13:10:12,014 INFO     ___FILE_ONLY___ Updated property [core/project].
+
+2021-07-07 13:10:12,073 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): cloudresourcemanager.googleapis.com:443
+2021-07-07 13:10:12,588 DEBUG    urllib3.connectionpool https://cloudresourcemanager.googleapis.com:443 "GET /v1/projects/shopify-319117?alt=json HTTP/1.1" 200 None
+2021-07-07 13:10:12,595 INFO     root            Display format: "default"
