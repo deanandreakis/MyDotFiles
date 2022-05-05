@@ -1,0 +1,33 @@
+2021-09-09 14:46:44,825 DEBUG    root            Loaded Command Group: ['gcloud', 'auth']
+2021-09-09 14:46:44,831 DEBUG    root            Loaded Command Group: ['gcloud', 'auth', 'configure_docker']
+2021-09-09 14:46:44,832 DEBUG    root            Running [gcloud.auth.configure-docker] with arguments: []
+2021-09-09 14:46:44,975 WARNING  root            Your config file at [/Users/deanandreakis/.docker/config.json] contains these credential helper entries:
+
+{
+  "credHelpers": {
+    "marketplace.gcr.io": "gcloud",
+    "asia.gcr.io": "gcloud",
+    "us.gcr.io": "gcloud",
+    "eu.gcr.io": "gcloud",
+    "gcr.io": "gcloud",
+    "staging-k8s.gcr.io": "gcloud"
+  }
+}
+2021-09-09 14:46:44,976 INFO     ___FILE_ONLY___ Adding credentials for all GCR repositories.
+
+2021-09-09 14:46:44,976 WARNING  root            A long list of credential helpers may cause delays running 'docker build'. We recommend passing the registry name to configure only the registry you are using.
+2021-09-09 14:46:44,976 INFO     ___FILE_ONLY___ gcloud credential helpers already registered correctly.
+
+2021-09-09 14:46:44,978 INFO     root            Display format: "default"
+2021-09-09 14:46:44,981 DEBUG    root            Checking for updates...
+2021-09-09 14:46:45,001 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): dl.google.com:443
+2021-09-09 14:46:48,129 DEBUG    urllib3.connectionpool https://dl.google.com:443 "GET /dl/cloudsdk/channels/rapid/components-2.json HTTP/1.1" 200 168876
+2021-09-09 14:46:48,207 DEBUG    root            Updating notification cache...
+2021-09-09 14:46:48,207 DEBUG    root            Activating notification: [default]
+2021-09-09 14:46:48,207 INFO     ___FILE_ONLY___ 
+
+Updates are available for some Cloud SDK components.  To install them,
+please run:
+  $ gcloud components update
+
+

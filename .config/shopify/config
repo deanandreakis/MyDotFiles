@@ -2,4 +2,7 @@
 enabled = false
 
 [versioncheck]
-last_checked_at = 1625701925
+last_checked_at = 1634848498
+
+[features]
+shopifolk = false

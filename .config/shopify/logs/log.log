@@ -1,5 +1,1 @@
-[65473] [0mStart a local development node server for your project, as well as a public ngrok tunnel to your localhost.
-  Usage: [0;36mshopify node serve[0m
-
-[0;1mOptions:[0m
-  [0;36m--host=HOST[0m: Bypass running tunnel and use custom host. HOST must be HTTPS url.
+[75386] [0m2.6.5

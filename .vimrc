@@ -29,6 +29,7 @@ Plug 'tpope/vim-commentary'
 Plug 'jiangmiao/auto-pairs'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'github/copilot.vim', {'branch': 'release'}
 call plug#end()
 
 function! LinterStatus() abort
@@ -91,6 +92,9 @@ let g:fzf_action = {
 " Put anything NeoVim specific here
 if has('nvim')
 endif
+
+" Setup a command for the Prettier code formatter
+command! -nargs=0 Prettier :CocCommand prettier.forceFormatDocument
 
 " Enable syntax highlighting
 syntax on
