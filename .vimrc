@@ -26,10 +26,10 @@ Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'tpope/vim-commentary'
-Plug 'jiangmiao/auto-pairs'
+" Plug 'jiangmiao/auto-pairs'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'github/copilot.vim', {'branch': 'release'}
+" Plug 'github/copilot.vim', {'branch': 'release'}
 call plug#end()
 
 function! LinterStatus() abort
