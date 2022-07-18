@@ -1,0 +1,6 @@
+require('plugins')
+require('setup')
+require('colors')
+require('settings')
+require('keymaps')
+require('autocomplete')

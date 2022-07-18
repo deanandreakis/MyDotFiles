@@ -26,10 +26,10 @@ Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'tpope/vim-commentary'
-" Plug 'jiangmiao/auto-pairs'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Plug 'github/copilot.vim', {'branch': 'release'}
+Plug 'mattn/emmet-vim'
 call plug#end()
 
 function! LinterStatus() abort
@@ -88,6 +88,10 @@ let g:fzf_action = {
   \ 'ctrl-s': 'split',
   \ 'ctrl-v': 'vsplit'
   \}
+
+" Settings for Emmet
+let g:user_emmet_install_global = 0
+autocmd FileType html,css EmmetInstall
 
 " Put anything NeoVim specific here
 if has('nvim')
