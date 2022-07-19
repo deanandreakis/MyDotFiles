@@ -20,5 +20,4 @@ vim.o.cmdheight = 2
 vim.b.shiftwidth = 2
 vim.b.softtabstop = 2
 vim.b.expandtab = true
-
-
+vim.o.autochdir = true
