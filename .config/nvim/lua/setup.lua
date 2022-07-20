@@ -71,5 +71,23 @@ require'lspconfig'.solargraph.setup{
   on_attach = on_attach,
   flags = lsp_flags,
 }
-
-
+require'lspconfig'.eslint.setup{
+  on_attach = on_attach,
+  flags = lsp_flags,
+}
+require'lspconfig'.cssls.setup{
+  on_attach = on_attach,
+  flags = lsp_flags,
+}
+require'lspconfig'.emmet_ls.setup{
+  on_attach = on_attach,
+  flags = lsp_flags,
+}
+require'lspconfig'.sourcekit.setup{
+  on_attach = on_attach,
+  flags = lsp_flags,
+}
+require'lspconfig'.kotlin_language_server.setup{
+  on_attach = on_attach,
+  flags = lsp_flags,
+}
