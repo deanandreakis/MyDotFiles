@@ -63,31 +63,58 @@ local lsp_flags = {
   debounce_text_changes = 150,
 }
 
+-- Language Server Setup
+
+--lua
 require'lspconfig'.sumneko_lua.setup{
   on_attach = on_attach,
   flags = lsp_flags,
 }
+
+--ruby
 require'lspconfig'.solargraph.setup{
   on_attach = on_attach,
   flags = lsp_flags,
 }
+
+--javascript/typescript/jsx...
 require'lspconfig'.eslint.setup{
   on_attach = on_attach,
   flags = lsp_flags,
 }
+
+--css/scss/less
 require'lspconfig'.cssls.setup{
   on_attach = on_attach,
   flags = lsp_flags,
 }
+
+--html
 require'lspconfig'.emmet_ls.setup{
   on_attach = on_attach,
   flags = lsp_flags,
 }
+
+--swift/obj-c
 require'lspconfig'.sourcekit.setup{
   on_attach = on_attach,
   flags = lsp_flags,
 }
+
+--kotlin
 require'lspconfig'.kotlin_language_server.setup{
+  on_attach = on_attach,
+  flags = lsp_flags,
+}
+
+--java
+require'lspconfig'.jdtls.setup{
+  on_attach = on_attach,
+  flags = lsp_flags,
+}
+
+--python
+require'lspconfig'.pyright.setup{
   on_attach = on_attach,
   flags = lsp_flags,
 }
