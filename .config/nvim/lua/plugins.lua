@@ -32,7 +32,6 @@ return require('packer').startup(function()
   }
   use 'tpope/vim-commentary'
   use 'christoomey/vim-tmux-navigator'
---  use 'github/copilot.vim', {'branch': 'release'}
   use 'mattn/emmet-vim'
 
   -- Plugins for Autocomplete
@@ -42,6 +41,9 @@ return require('packer').startup(function()
   -- Plugins for Prettier
   use 'jose-elias-alvarez/null-ls.nvim'
   use 'MunifTanjim/prettier.nvim'
+
+  -- Plugin for vim-rooter
+  use 'airblade/vim-rooter'
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
