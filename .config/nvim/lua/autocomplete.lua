@@ -1,3 +1,6 @@
+-- Snippets
+require('luasnip.loaders.from_vscode').lazy_load()
+
 -- Mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
 local opts = { noremap=true, silent=true }
@@ -9,12 +12,21 @@ vim.keymap.set('n', '<space>q', vim.diagnostic.setloclist, opts)
 vim.opt.completeopt = {'menu', 'menuone', 'noselect'}
 
 local cmp = require('cmp')
+local luasnip = require('luasnip')
 
 local select_opts = {behavior = cmp.SelectBehavior.Select}
 
 cmp.setup({
+  snippet = {
+    expand = function(args)
+      luasnip.lsp_expand(args.body)
+    end
+  },
   sources = {
+    {name = 'path'},
     {name = 'nvim_lsp', keyword_length = 3},
+    {name = 'buffer', keyword_length = 3},
+    {name = 'luasnip', keyword_length = 2},
   },
   window = {
     documentation = cmp.config.window.bordered()
@@ -24,6 +36,9 @@ cmp.setup({
     format = function(entry, item)
       local menu_icon = {
         nvim_lsp = 'λ',
+	luasnip = '⋗',
+        buffer = 'Ω',
+        path = '🖫',
       }
 
       item.menu = menu_icon[entry.source.name]
@@ -56,6 +71,22 @@ cmp.setup({
     ['<S-Tab>'] = cmp.mapping(function(fallback)
       if cmp.visible() then
         cmp.select_prev_item(select_opts)
+      else
+        fallback()
+      end
+    end, {'i', 's'}),
+
+    ['<C-d>'] = cmp.mapping(function(fallback)
+      if luasnip.jumpable(1) then
+        luasnip.jump(1)
+      else
+        fallback()
+      end
+    end, {'i', 's'}),
+
+    ['<C-b>'] = cmp.mapping(function(fallback)
+      if luasnip.jumpable(-1) then
+        luasnip.jump(-1)
       else
         fallback()
       end
