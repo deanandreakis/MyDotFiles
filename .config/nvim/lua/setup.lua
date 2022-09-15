@@ -68,9 +68,40 @@ local on_attach = function(client, bufnr)
   vim.keymap.set('n', '<space>f', vim.lsp.buf.formatting, bufopts)
 end
 
+vim.g.coq_settings = {
+  auto_start = 'shut-up',
+  keymap = {
+    recommended = false,
+    jump_to_mark = "<c-,>"
+  },
+  clients = {
+    paths = {
+      path_seps = {
+        "/"
+      }
+    },
+    buffers = {
+      match_syms = true
+    }
+  },
+  display = {
+    ghost_text = {
+      enabled = true
+    }
+  }
+}
+local coq = require("coq")
+
 local lsp_flags = {
   -- This is the default in Nvim 0.7+
   debounce_text_changes = 150,
+  coq.lsp_ensure_capabilities(
+            vim.tbl_deep_extend("force", {
+            on_attach = lsp_on_attach,
+            capabilities = capabilities,
+            flags = {debounce_text_changes = 150},
+            init_options = config
+        }, {})),
 }
 
 -- Language Server Setup
