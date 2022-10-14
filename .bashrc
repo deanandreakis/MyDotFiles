@@ -10,3 +10,4 @@ export PS1=${PS1_START}${PS1_END}
 
 # Created by `userpath` on 2020-08-05 21:44:22
 export PATH="$PATH:/Users/deanandreakis/.local/bin"
+. "$HOME/.cargo/env"

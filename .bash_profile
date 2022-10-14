@@ -28,3 +28,4 @@ export PATH="$HOME/Library/Python/3.8/bin:$PATH"
 export PATH="$PATH:/Users/deanandreakis/.local/bin"
 
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore-vcs --hidden'
+. "$HOME/.cargo/env"
