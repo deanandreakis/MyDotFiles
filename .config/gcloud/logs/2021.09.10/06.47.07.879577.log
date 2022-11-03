@@ -1,6 +1,0 @@
-2021-09-10 06:47:07,881 DEBUG    root            Loaded Command Group: ['gcloud', 'config']
-2021-09-10 06:47:07,956 DEBUG    root            Loaded Command Group: ['gcloud', 'config', 'set']
-2021-09-10 06:47:07,958 DEBUG    root            Running [gcloud.config.set] with arguments: [SECTION/PROPERTY: "run/region", VALUE: "us-west4"]
-2021-09-10 06:47:07,959 INFO     ___FILE_ONLY___ Updated property [run/region].
-
-2021-09-10 06:47:07,961 INFO     root            Display format: "default"
