@@ -75,7 +75,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git virtualenv)
+plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -83,34 +83,36 @@ source $ZSH/oh-my-zsh.sh
 #
 # For FZF
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-# Fastlane (installed by Homebrew)
-export PATH="$HOME/.fastlane/bin:$PATH"
-
-# ruby (installed by Homebrew)
-export PATH="/usr/local/opt/ruby/bin:$PATH"
-export PATH="$HOME/.gem/ruby/3.1.0/bin:$PATH"
-export PATH="/usr/local/lib/ruby/gems/3.1.0/bin:$PATH"
-export LDFLAGS="-L/usr/local/opt/ruby/lib"
-export CPPFLAGS="-I/usr/local/opt/ruby/include"
-export PKG_CONFIG_PATH="/usr/local/opt/ruby/lib/pkgconfig"
-
-# MacPorts Installer addition on 2020-03-14_at_11:04:37: adding an appropriate PATH variable for use with MacPorts.
-export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
-# Finished adapting your PATH environment variable for use with MacPorts.
-
-# For autopep8 and pycodestyle
-export PATH="$HOME/Library/Python/3.8/bin:$PATH"
-
-# Created by `userpath` on 2020-08-05 21:44:22 for use with python virtualenv
-export PATH="$PATH:/Users/deanandreakis/.local/bin"
-
 # FZF default command
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore-vcs --hidden'
 
-# GCP Cloud CLI
-source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"
-source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"
+
+if [[ "$OSTYPE" =~ ^darwin ]]; then
+  
+  # Fastlane (installed by Homebrew)
+  export PATH="$HOME/.fastlane/bin:$PATH"
+
+  # ruby (installed by Homebrew)
+  export PATH="/usr/local/opt/ruby/bin:$PATH"
+  export PATH="$HOME/.gem/ruby/3.1.0/bin:$PATH"
+  export PATH="/usr/local/lib/ruby/gems/3.1.0/bin:$PATH"
+  export LDFLAGS="-L/usr/local/opt/ruby/lib"
+  export CPPFLAGS="-I/usr/local/opt/ruby/include"
+  export PKG_CONFIG_PATH="/usr/local/opt/ruby/lib/pkgconfig"
+
+  # For autopep8 and pycodestyle
+  export PATH="$HOME/Library/Python/3.8/bin:$PATH"
+
+  # Created by `userpath` on 2020-08-05 21:44:22 for use with python virtualenv
+  export PATH="$PATH:/Users/deanandreakis/.local/bin"
+
+   # GCP Cloud CLI
+  source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"
+  source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"
+
+  test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+  eval "$(rbenv init - zsh)"
+fi
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
@@ -138,6 +140,3 @@ fi
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-eval "$(rbenv init - zsh)"
