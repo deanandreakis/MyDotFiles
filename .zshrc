@@ -92,7 +92,7 @@ source $ZSH/oh-my-zsh.sh
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore-vcs --hidden'
 
 
-if [[ "$OSTYPE" =~ ^darwin ]]; then
+if [[ "$OSTYPE" = darwin* ]]; then
   
   # Fastlane (installed by Homebrew)
   export PATH="$HOME/.fastlane/bin:$PATH"
