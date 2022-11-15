@@ -24,3 +24,6 @@ vim.opt.autochdir = true
 vim.opt.copyindent = true
 vim.opt.smartindent = true
 vim.opt.tabstop = 2
+-- disable netrw at the very start of your init.lua (strongly advised)
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
