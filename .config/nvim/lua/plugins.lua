@@ -29,19 +29,23 @@ return require('packer').startup(function()
   'nvim-treesitter/nvim-treesitter',
   run = ':TSUpdate'
   }
-  use {
-    "williamboman/nvim-lsp-installer",
-    "neovim/nvim-lspconfig",
-  }
   use 'tpope/vim-commentary'
   use 'christoomey/vim-tmux-navigator'
   use 'mattn/emmet-vim'
 
-  -- Plugins for Autocomplete
-  use { 'ms-jpq/coq_nvim', branch = 'coq' }
-  use { 'ms-jpq/coq.artifacts', branch = 'artifacts' }
-  use { 'ms-jpq/coq.thirdparty', branch = '3p' }
+-- Plugins for LSP
+  use {
+      "williamboman/mason.nvim",
+      "williamboman/mason-lspconfig.nvim",
+      "neovim/nvim-lspconfig",
+  }
 
+  -- Plugins for Autocomplete
+--  use { 'ms-jpq/coq_nvim', branch = 'coq' }
+--  use { 'ms-jpq/coq.artifacts', branch = 'artifacts' }
+--  use { 'ms-jpq/coq.thirdparty', branch = '3p' }
+  use {'neoclide/coc.nvim', branch = 'release'}
+  
   -- Plugins for Prettier
   use 'jose-elias-alvarez/null-ls.nvim'
   use 'MunifTanjim/prettier.nvim'
