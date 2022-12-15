@@ -8,7 +8,11 @@ require'nvim-treesitter.configs'.setup {
   }
 }
 
-require("nvim-tree").setup()
+require("nvim-tree").setup({
+  view = {
+    adaptive_size = true,
+    },
+})
 
 require('lualine').setup {
   options = {
