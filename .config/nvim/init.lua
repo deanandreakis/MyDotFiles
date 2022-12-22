@@ -1,10 +1,1 @@
-require('plugins')
-require('colors')
-require('settings')
-require('keymaps')
-require('errors')
-require('lsp')
-require('setup')
-require('COCcompletion')
---require('COQcompletion')
-
+require("deanware")

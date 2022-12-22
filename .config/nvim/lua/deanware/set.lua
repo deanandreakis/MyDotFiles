@@ -1,3 +1,23 @@
+vim.opt.tabstop = 4
+vim.opt.softtabstop = 4
+vim.opt.shiftwidth = 4
+vim.opt.expandtab = true
+
+vim.opt.smartindent = true
+
+vim.opt.wrap = false
+
+vim.opt.hlsearch = false
+vim.opt.incsearch = true
+
+vim.opt.termguicolors = true
+
+vim.opt.scrolloff = 8
+vim.opt.signcolumn = "yes"
+vim.opt.isfname:append("@-@")
+
+vim.opt.updatetime = 50
+
 vim.opt.syntax = "on"
 vim.opt.background = "dark"
 vim.opt.backup = true
@@ -6,7 +26,6 @@ vim.opt.directory = "/tmp"
 vim.opt.hidden = true
 vim.opt.wildmenu = true
 vim.opt.showcmd = true
-vim.opt.hlsearch = true
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
 vim.opt.backspace = [[indent,eol,start]]
@@ -17,13 +36,9 @@ vim.opt.confirm = true
 vim.opt.visualbell = true
 vim.opt.mouse = 'a'
 vim.opt.cmdheight = 2
-vim.opt.shiftwidth = 2
-vim.opt.softtabstop = 2
-vim.opt.expandtab = true
 vim.opt.autochdir = true
 vim.opt.copyindent = true
 vim.opt.smartindent = true
-vim.opt.tabstop = 2
 -- disable netrw at the very start of your init.lua (strongly advised)
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
