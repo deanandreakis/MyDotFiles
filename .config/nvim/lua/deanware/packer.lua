@@ -48,7 +48,6 @@ return require('packer').startup(function(use)
 
   use 'tpope/vim-commentary'
   use 'christoomey/vim-tmux-navigator'
-  use 'mattn/emmet-vim'
 
   -- Plugins for LSP
   use {
@@ -72,10 +71,6 @@ return require('packer').startup(function(use)
 		  {'rafamadriz/friendly-snippets'},
 	  }
   }
-
-  -- Plugins for Prettier
-  use 'jose-elias-alvarez/null-ls.nvim'
-  use 'MunifTanjim/prettier.nvim'
 
   -- Plugin for vim-rooter
   use 'airblade/vim-rooter'
