@@ -1,6 +1,6 @@
 require("deanware.set")
 require("deanware.remap")
-require("deanware.packer")
+require("deanware.lazy")
 
 local augroup = vim.api.nvim_create_augroup
 local deanwareGroup = augroup('deanware', {})

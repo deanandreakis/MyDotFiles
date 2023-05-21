@@ -33,7 +33,7 @@ if [[ "$OSTYPE" = darwin* ]]; then
   export PATH="$PATH:/Users/deanandreakis/.local/bin"
 
   test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-  #eval "$(rbenv init - zsh)"
+  eval "$(rbenv init - zsh)"
 fi
 
 # Preferred editor for local and remote sessions
