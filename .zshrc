@@ -34,6 +34,8 @@ if [[ "$OSTYPE" = darwin* ]]; then
 
   test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
   eval "$(rbenv init - zsh)"
+
+  alias vim="nvim"
 fi
 
 # Preferred editor for local and remote sessions
