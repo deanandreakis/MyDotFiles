@@ -6,7 +6,7 @@ vim.api.nvim_set_keymap("n", "<C-o>", ":NvimTreeToggle<CR>", { noremap = true })
 
 -- Telescope find files and grep
 vim.api.nvim_set_keymap("n", "<C-p>", ":Telescope find_files hidden=true<CR>", { noremap = true })
-vim.api.nvim_set_keymap("n", "<C-r>", ":Telescope live_grep<CR>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<C-r>", ":Telescope live_grep_args<CR>", { noremap = true })
 
 -- Move highlited sections in visual mode (respecting indents)
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")

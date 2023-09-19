@@ -1,4 +1,4 @@
-vim.o.termguicolors = true
+--vim.o.termguicolors = true
 
 function ColorMyPencils(color)
 	color = color or "darcula-solid"
@@ -9,4 +9,4 @@ function ColorMyPencils(color)
 
 end
 
-ColorMyPencils()
+--ColorMyPencils()
