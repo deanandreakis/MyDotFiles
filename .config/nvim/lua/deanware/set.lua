@@ -19,7 +19,7 @@ vim.opt.isfname:append("@-@")
 vim.opt.updatetime = 50
 
 vim.opt.syntax = "on"
-vim.opt.background = "dark"
+vim.opt.background = ""
 vim.opt.backup = true
 vim.opt.backupdir = "/tmp"
 vim.opt.directory = "/tmp"

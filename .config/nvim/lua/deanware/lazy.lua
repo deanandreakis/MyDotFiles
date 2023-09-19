@@ -13,13 +13,9 @@ vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup({
   {
-	  'briones-gabriel/darcula-solid.nvim',
-	  dependencies = {
-	    'rktjmp/lush.nvim',
-    },
-	  as = 'darcula-solid',
+	  'rebelot/kanagawa.nvim',
 	  config = function()
-		  vim.cmd('colorscheme darcula-solid')
+		  vim.cmd('colorscheme kanagawa')
 	  end
   },
 
