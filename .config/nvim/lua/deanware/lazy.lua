@@ -13,10 +13,13 @@ vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup({
   {
-	  'navarasu/onedark.nvim',
-	  as = 'onedark',
+	  'briones-gabriel/darcula-solid.nvim',
+	  dependencies = {
+	    'rktjmp/lush.nvim',
+    },
+	  as = 'darcula-solid',
 	  config = function()
-		  vim.cmd('colorscheme onedark')
+		  vim.cmd('colorscheme darcula-solid')
 	  end
   },
 
