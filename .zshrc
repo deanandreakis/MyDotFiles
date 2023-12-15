@@ -23,12 +23,6 @@ if [[ "$OSTYPE" = darwin* ]]; then
   # Homebrew
   export PATH=$HOME/bin:/opt/homebrew/bin:/usr/local/bin:$PATH
 
-  # Fastlane (installed by Homebrew)
-  export PATH="$HOME/.fastlane/bin:$PATH"
-
-  # For autopep8 and pycodestyle
-  export PATH="$HOME/Library/Python/3.8/bin:$PATH"
-
   # Created by `userpath` on 2020-08-05 21:44:22 for use with python virtualenv
   export PATH="$PATH:/Users/deanandreakis/.local/bin"
 
