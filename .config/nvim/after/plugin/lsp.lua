@@ -1,5 +1,21 @@
 local lsp = require("lsp-zero")
 
+lsp.extend_lspconfig({
+  suggest_lsp_servers = true,
+  sign_text = {
+    error = 'E',
+    warn = 'W',
+    hint = 'H',
+    info = 'I'
+  },
+})
+
+require('lspconfig').lua_ls.setup({
+  on_init = function(client)
+    lsp_zero.nvim_lua_settings(client, {})
+  end,
+})
+
 -- Fix Undefined global 'vim'
 lsp.configure('lua_ls', {
     settings = {
@@ -21,16 +37,6 @@ cmp.setup({
     ['<C-p>'] = cmp.mapping.select_prev_item(),
     ['<C-n>'] = cmp.mapping.select_next_item(),
   }),
-})
-
-lsp.extend_lspconfig({
-  suggest_lsp_servers = true,
-  sign_text = {
-    error = 'E',
-    warn = 'W',
-    hint = 'H',
-    info = 'I'
-  },
 })
 
 lsp.on_attach(function(client, bufnr)
