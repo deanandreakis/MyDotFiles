@@ -1,10 +1,5 @@
 local lsp = require("lsp-zero")
 
-lsp.preset("recommended")
-
-lsp.ensure_installed({
-})
-
 -- Fix Undefined global 'vim'
 lsp.configure('lua_ls', {
     settings = {
@@ -18,26 +13,24 @@ lsp.configure('lua_ls', {
 
 
 local cmp = require('cmp')
-local cmp_select = {behavior = cmp.SelectBehavior.Select}
-local cmp_mappings = lsp.defaults.cmp_mappings({
-  ['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
-  ['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
-  ['<CR>'] = cmp.mapping.confirm({ select = true }),
-  ["<C-Space>"] = cmp.mapping.complete(),
+local cmp_action = require('lsp-zero').cmp_action()
+cmp.setup({
+  mapping = cmp.mapping.preset.insert({
+    ['<CR>'] = cmp.mapping.confirm({select = true}),
+    ['<C-Space>'] = cmp.mapping.complete(),
+    ['<C-p>'] = cmp.mapping.select_prev_item(),
+    ['<C-n>'] = cmp.mapping.select_next_item(),
+  }),
 })
 
-lsp.setup_nvim_cmp({
-  mapping = cmp_mappings
-})
-
-lsp.set_preferences({
-    suggest_lsp_servers = true,
-    sign_icons = {
-        error = 'E',
-        warn = 'W',
-        hint = 'H',
-        info = 'I'
-    }
+lsp.extend_lspconfig({
+  suggest_lsp_servers = true,
+  sign_text = {
+    error = 'E',
+    warn = 'W',
+    hint = 'H',
+    info = 'I'
+  },
 })
 
 lsp.on_attach(function(client, bufnr)
