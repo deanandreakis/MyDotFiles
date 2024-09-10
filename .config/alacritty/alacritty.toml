@@ -48,18 +48,6 @@ mode = "~Alt"
 mods = "Shift"
 
 [[keyboard.bindings]]
-chars = "\f"
-key = "K"
-mode = "~Vi|~Search"
-mods = "Control"
-
-[[keyboard.bindings]]
-action = "ClearHistory"
-key = "K"
-mode = "~Vi|~Search"
-mods = "Control"
-
-[[keyboard.bindings]]
 action = "ResetFontSize"
 key = "Key0"
 mods = "Control"
@@ -103,11 +91,6 @@ mods = "Control"
 action = "ClearSelection"
 key = "C"
 mode = "Vi|~Search"
-mods = "Control"
-
-[[keyboard.bindings]]
-action = "Hide"
-key = "H"
 mods = "Control"
 
 [[keyboard.bindings]]
