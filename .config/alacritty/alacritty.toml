@@ -129,12 +129,6 @@ key = "F"
 mode = "~Search"
 mods = "Control"
 
-[[keyboard.bindings]]
-action = "SearchBackward"
-key = "B"
-mode = "~Search"
-mods = "Control"
-
 [scrolling]
 history = 100000
 
