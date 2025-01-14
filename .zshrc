@@ -43,6 +43,8 @@ fi
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 export PATH=$HOME/.local/bin:$PATH
 
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+if [[ "$OSTYPE" = linux* ]]; then
+  eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+fi
 
 . "$HOME/.cargo/env"
