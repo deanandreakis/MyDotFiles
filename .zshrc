@@ -56,3 +56,4 @@ if [[ "$OSTYPE" = linux* ]]; then
 fi
 
 #. "$HOME/.cargo/env"
+eval "$(/home/deanandreakis/.local/bin/mise activate zsh)"
