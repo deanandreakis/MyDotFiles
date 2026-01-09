@@ -1,7 +1,7 @@
 export LANG='en_US.UTF-8'
 export LANGUAGE='en_US:en'
 export LC_ALL='en_US.UTF-8'
-export OLLAMA_HOST=0.0.0.0
+# export OLLAMA_HOST=0.0.0.0
 if [[ $TERM == xterm ]]; then TERM=xterm-256color; fi
 
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
@@ -50,9 +50,9 @@ fi
 export PATH=$HOME/.local/bin:$PATH
 
 if [[ "$OSTYPE" = linux* ]]; then
-  eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-  export PATH=~/.npm-global/bin:$PATH
-  export PATH=${PATH}:/usr/local/cuda-13.0/bin
+#  eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+#  export PATH=~/.npm-global/bin:$PATH
+#  export PATH=${PATH}:/usr/local/cuda-13.0/bin
 fi
 
-. "$HOME/.cargo/env"
+#. "$HOME/.cargo/env"
