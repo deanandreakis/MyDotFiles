@@ -28,3 +28,10 @@ autocmd({"BufWritePre"}, {
     pattern = "*",
     command = [[%s/\s\+$//e]],
 })
+
+autocmd("FileType", {
+  pattern = { "markdown", "text", "txt" },
+  callback = function()
+    vim.opt_local.wrap = true
+  end,
+})
