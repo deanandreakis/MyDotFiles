@@ -1,7 +1,6 @@
 export LANG='en_US.UTF-8'
 export LANGUAGE='en_US:en'
 export LC_ALL='en_US.UTF-8'
-# export OLLAMA_HOST=0.0.0.0
 if [[ $TERM == xterm ]]; then TERM=xterm-256color; fi
 
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
@@ -55,5 +54,8 @@ if [[ "$OSTYPE" = linux* ]]; then
 #  export PATH=${PATH}:/usr/local/cuda-13.0/bin
 fi
 
-#. "$HOME/.cargo/env"
+# mise
 eval "$(/home/deanandreakis/.local/bin/mise activate zsh)"
+
+# opencode
+export PATH=/home/deanandreakis/.opencode/bin:$PATH
